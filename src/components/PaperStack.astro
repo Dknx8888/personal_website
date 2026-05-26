@@ -1,0 +1,83 @@
+---
+---
+
+<div class="paper-stack">
+    <slot />
+</div>
+
+<style>
+.paper-stack {
+    --paper-color: #f1eadb;
+    --line-color: rgba(86, 128, 130, 0.38);
+    --margin-line-color:rgba(178, 83, 67, 0.55);
+    --line-height: 48px;
+    --margin-line-x: 56px;
+
+    background-color: var(--paper-color);
+
+    background-image: 
+        url(http://www.transparenttextures.com/patterns/rice-paper.png),
+        linear-gradient(
+            to right,
+            transparent 0,
+            transparent calc(var(--margin-line-x) - 1px),
+
+            var(--margin-line-color) calc(var(--margin-line-x) - 1px),
+            var(--margin-line-color) var(--margin-line-x),
+
+            transparent var(--margin-line-x)
+        ),
+
+        repeating-linear-gradient(
+            to bottom,
+
+            transparent 0,
+            transparent calc(var(--line-height) - 1px),
+
+            var(--line-color) calc(var(--line-height) - 1px),
+            var(--line-color) var(--line-height)
+        ),
+        url(http://www.transparenttextures.com/patterns/rice-paper.png);
+
+    background-size:
+        100% 100%,
+        100% var(--line-height);
+
+    background-repeat:
+        no-repeat,
+        repeat;
+
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    margin: 50px auto 0;
+    max-width: 1080px;
+    min-height: 300px;
+    line-height: var(--line-height);
+
+    padding: 24px 24px 24px calc(var(--margin-line-x) + 24px);
+    position: relative;
+}
+
+.paper-stack::before, .paper-stack::after {
+    content: "";
+    height: 98%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    background-color: #f1eadb;
+    background-image: url(http://www.transparenttextures.com/patterns/rice-paper.png);
+}
+
+.paper-stack::before {
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    left: -5px;
+    top: 4px;
+    transform: rotate(-2.5deg);
+}
+
+.paper-stack::after {
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    right: -3px;
+    top: 1px;
+    transform: rotate(1.4deg);
+}
+</style>

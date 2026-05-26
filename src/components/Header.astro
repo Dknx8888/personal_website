@@ -1,0 +1,33 @@
+---
+import clouds from "../assets/clouds.png"
+---
+<header
+    class="box-border grid h-25 grid-cols-[1fr_auto_1fr] items-center 
+    bg-transparent bg-no-repeat bg-position-[bottom_right] bg-size-[auto_100%]
+    px-12.5"
+>
+    <h1 class="font-logo text-[clamp(2.6rem,3.2vw,3.4rem)] leading-none tracking-[0.04em] 
+    text-logo-ink [text-shadow:0_1px_0_rgb(255_255_255/0.35)]"
+    >
+        Nick Vu
+    </h1>
+
+    <nav
+      class="justify-self-center flex items-center gap-4 text-center 
+      *:font-nav *:text-[1.1rem] *:font-semibold *:tracking-[0.01em] *:text-nav-ink"
+    >
+        <p>phone</p>
+        <p>email</p>
+        <p>github</p>
+        <p>linkedin</p>
+        <p>experience</p>
+        <p>blog</p>
+    </nav>
+
+    <button
+      class="justify-self-end cursor-pointer border-0 bg-transparent text-2xl text-nav-ink"
+      aria-label="Toggle dark mode"
+    >
+        <p>resume</p>
+    </button>
+</header>

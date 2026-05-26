@@ -1,0 +1,39 @@
+---
+import PaperStack from "../components/PaperStack.astro";
+import Header from "../components/Header.astro";
+import Greetings from "../components/Greetings.astro";
+import "../styles/global.css";
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <script
+            src="https://kit.fontawesome.com/b4fb913b49.js"
+            crossorigin="anonymous"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap"
+            rel="stylesheet"
+        />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Astro</title>
+    </head>
+    <body>
+        <Header />
+            <PaperStack>
+                <Greetings />
+            </PaperStack>
+    </body>
+</html>
+
+<style>
+    body {
+        background-color: #8A5A32;
+        background-image: url(http://www.transparenttextures.com/patterns/retina-wood.png);
+        /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */    
+    }
+</style>

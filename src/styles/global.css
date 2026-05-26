@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Nunito:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-logo: "Patrick Hand SC", "Comic Sans MS", cursive;
+  --font-nav: "Nunito", "Inter", system-ui, sans-serif;
+  --font-greeting: "Kalam", cursive;
+  --font-text: "Caveat", cursive;
+
+  --color-page-bg: #f3d7a4;
+  --color-page-bg-dark: #1f2933;
+
+  --color-header-sky: #4FA7EE;
+  --color-logo-ink: #174A6A;
+  --color-nav-ink: #153B56;
+}
+
+@layer base {
+  html {
+    min-height: 100%;
+  }
+
+  body {
+    min-height: 100%;
+  }
+}
+
+p {
+    line-height: 48px;
+}
