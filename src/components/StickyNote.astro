@@ -1,12 +1,99 @@
-<div class="sticky-note">
+---
+interface Props {
+    color?: "yellow" | "blue" | "pink" | "green";
+    type?: "photo";
+    width?: string;
+    class?: string;
+}
+
+const {
+    color = "yellow",
+    type = "",
+    class: className = "",
+    width = "235px",
+} = Astro.props;
+---
+
+<div 
+    class:list={["sticky-note", color, type, className]}
+    style={{ "--sticky-width": width}}
+>
     <slot />
 </div>
 
 <style>
-    .note {
-        color: #333;
+    /* Credit: https://codepen.io/edbond88/pen/DOMYgy, modernized */
+    .sticky-note {
+    	width: var(--sticky-width, 235px);
+    	/*min-height: 235px;*/
+    	padding: 35px; 
         position: relative;
-        width: 300px;
         
+    	display: inline-block;
+    	vertical-align: top;
+
+        font-family: "Englebert", system-ui, sans-serif;
+    	font-size: 24px;
+        line-height: 34px;
+       	text-align: center;
+        
+    	
+    	color:#4b453c;
+    	background: var(--note-color, #F7E999);
+    	box-shadow: 0 4px 5px rgb(0 0 0 / 0.2);
+    }
+
+    /* Tape part */
+    .sticky-note::before {
+    	content: "";
+    	position: absolute;
+    	top: -13px;
+    	left: 50%;
+    	translate: -50% 0;
+            
+    	width: 130px;
+    	height: 28px;
+            
+    	background: rgb(227 200 114 / 0.4);
+        box-shadow: 0 1px 1px rgb(0 0 0 / 0.2);
+        border-radius: 6px / 18px 0;
+        rotate: -2deg;
+    }
+
+    /* Colors */
+    .yellow {
+        --note-color: #f7e999;
+        rotate: 2deg;
+    }
+
+    .blue {
+        --note-color: #b9dcf4;
+        rotate: -2deg;
+    }
+    
+    .pink {
+        --note-color: #ffbda3;
+        rotate: 1deg;
+    }
+    
+    .green {
+        --note-color: #caf4b9;
+        rotate: -1deg;
+    }
+
+    .photo {
+        --note-color: #fff;
+        rotate: 2deg;
+        border: solid 5px black;
+
+        padding: 18px;
+    }
+
+    .photo :global(img) {
+        display: block;
+        width: 100%;
+        height: auto;
+
+        border: solid 5px black;
     }
 </style>

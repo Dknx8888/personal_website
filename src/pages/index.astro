@@ -2,6 +2,7 @@
 import PaperStack from "../components/PaperStack.astro";
 import Header from "../components/Header.astro";
 import Greetings from "../components/Greetings.astro";
+import OverviewCards from "../components/OverviewCards.astro";
 import "../styles/global.css";
 ---
 
@@ -24,16 +25,17 @@ import "../styles/global.css";
     </head>
     <body>
         <Header />
-            <PaperStack>
-                <Greetings />
-            </PaperStack>
+        <PaperStack>
+            <Greetings />
+        </PaperStack>
+        <OverviewCards />
     </body>
 </html>
 
 <style>
     body {
-        background-color: #8A5A32;
-        background-image: url(http://www.transparenttextures.com/patterns/retina-wood.png);
-        /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */    
+        background-color: #8c6746;
+        background-image: url("https://www.transparenttextures.com/patterns/felt.png");
+        /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */ 
     }
 </style>
