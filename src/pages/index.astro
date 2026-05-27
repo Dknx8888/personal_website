@@ -1,8 +1,15 @@
 ---
-import PaperStack from "../components/PaperStack.astro";
-import Header from "../components/Header.astro";
-import Greetings from "../components/Greetings.astro";
-import OverviewCards from "../components/OverviewCards.astro";
+import PaperStack from "../components/ui/PaperStack.astro";
+
+import Header from "../components/layout/Header.astro";
+import Footer from "../components/layout/Footer.astro";
+
+import Greetings from "../components/sections/Greetings.astro";
+import CardsSection from "../components/sections/CardsSection.astro";
+import Skills from "../components/sections/Skills.astro";
+import Experiences from "../components/sections/Experiences.astro";
+import Projects from "../components/sections/Projects.astro";
+
 import "../styles/global.css";
 ---
 
@@ -25,10 +32,31 @@ import "../styles/global.css";
     </head>
     <body>
         <Header />
-        <PaperStack>
-            <Greetings />
-        </PaperStack>
-        <OverviewCards />
+        <main class="max-w-360 mx-auto flex flex-col">
+            <section class="hero">
+                <PaperStack pinColor="red">
+                    <Greetings />
+                </PaperStack>
+
+                <div class="cards-space">
+                    <div class="cards-width">
+                        <CardsSection />
+                    </div>
+                </div>
+            </section>
+
+            <PaperStack pinColor="yellow">
+                <Skills />
+            </PaperStack>
+            <PaperStack pinColor="blue">
+                <Experiences />
+            </PaperStack>
+            <PaperStack pinColor="green">
+                <Projects />
+            </PaperStack>
+        </main>
+        <Footer />
+
     </body>
 </html>
 
@@ -38,4 +66,23 @@ import "../styles/global.css";
         background-image: url("https://www.transparenttextures.com/patterns/felt.png");
         /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */ 
     }
+
+    .hero {
+        min-height: calc(100svh - 4.5rem);
+        display: grid;
+        grid-template-rows: auto 1fr;
+    }
+    
+    .cards-space {
+        display: flex;
+        align-items: center;
+        min-height: 0;
+    }
+
+    .cards-width {
+        width: 100%;
+    }
+
+
+
 </style>

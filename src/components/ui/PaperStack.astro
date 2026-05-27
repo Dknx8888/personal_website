@@ -1,8 +1,17 @@
 ---
+import PaperPin from "./PaperPin.astro"
+
+interface Props {
+    pinColor?: "red" | "yellow" | "blue" | "pink" | "green";
+}
+
+const {
+    pinColor = "red",
+} = Astro.props;
 ---
 
 <div class="paper-stack">
-    <span class="paper-pin"></span>
+    <PaperPin color={pinColor}/>
     <slot />
 </div>
 
@@ -50,11 +59,11 @@
 
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
     margin: 50px auto 0;
-    max-width: 1080px;
+    width: min(920px, calc(100vw - 4rem));
     min-height: 300px;
     line-height: var(--line-height);
 
-    padding: 24px 24px 24px calc(var(--margin-line-x) + 24px);
+    padding: 30px 24px 24px calc(var(--margin-line-x) + 24px);   
     position: relative;
     overflow: visible;
 }

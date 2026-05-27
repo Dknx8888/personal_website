@@ -1,0 +1,51 @@
+---
+interface Props {
+    color?: "red" | "yellow" | "blue" | "pink" | "green";
+}
+
+const {
+    color = "red",
+} = Astro.props;
+---
+
+<span class:list={["paper-pin", color]}></span>
+
+<style>
+    .paper-pin {
+    position: absolute;
+    left: 50%;
+    top: 2px;
+    transform: translateX(-50%);
+    
+    width: 22px;
+    height: 22px;
+    display: block;
+    border-radius: 50%;
+    
+    background: var(--pin-color, #d74a4a);
+    box-shadow: inset -3px -3px #0000004d,0 2px 3px #0000004d;
+    z-index: 3;
+    pointer-events: none;
+    }
+
+    /* Colors */
+    .red {
+        --pin-color: #d74a4a;
+    }
+    
+    .yellow {
+        --pin-color: #f2d03b;
+    }
+
+    .blue {
+        --pin-color: #2e5c8a;
+    }
+    
+    .pink {
+        --pin-color: #d96b9a;
+    }
+    
+    .green {
+        --pin-color: #4f9d69;
+    }
+</style>

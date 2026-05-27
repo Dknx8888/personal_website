@@ -1,0 +1,40 @@
+---
+import StickyNote from "../ui/StickyNote.astro"
+import sampleAvt from "../../assets/sampleavt.jpg"
+---
+
+<section class="grid grid-cols-[1fr_auto]">
+    <div>
+        <h3>Hello!</h3>
+        <h3>I'm Nick.</h3>
+    </div>
+
+    <div class="flex justify-center">
+        <StickyNote type="photo" width="clamp(208px,28vh,268px)">
+            <img src={sampleAvt.src} alt="Nick's avatar" />
+        </StickyNote>
+    </div>
+</section>
+
+<div class="ruled">
+    <h4>I'm a Senior Computer Science student at Michigan State University.</h4>
+    <h4>When I am not building software products, I enjoy tinkering with old technologies and experimenting with my homelab.</h4>
+</div>
+
+<style>
+.ruled {
+    transform: translateY(17px);
+}
+
+@media (min-height: 800px) {
+    .ruled {
+        transform: translateY(30px);
+    }
+}
+
+@media (min-height: 1080px) {
+    .ruled {
+        transform: translateY(1px);
+    }
+}
+</style>

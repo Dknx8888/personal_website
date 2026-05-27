@@ -26,6 +26,14 @@
   }
 }
 
-p {
-    line-height: 48px;
+.paper-stack h3 {
+  font-family: var(--font-greeting);
+  font-size: clamp(4rem, 8vh, 5.5rem);
+  line-height: 6rem;
+}
+
+.paper-stack h4 {
+  font-family: var(--font-text);
+  font-size: clamp(2rem, 2.8vh, 2.5rem);
+  line-height: 3rem;
 }
