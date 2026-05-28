@@ -6,7 +6,6 @@ import Footer from "../components/layout/Footer.astro";
 
 import Greetings from "../components/sections/Greetings.astro";
 import CardsSection from "../components/sections/CardsSection.astro";
-import Skills from "../components/sections/Skills.astro";
 import Experiences from "../components/sections/Experiences.astro";
 import Projects from "../components/sections/Projects.astro";
 
@@ -46,12 +45,9 @@ import "../styles/global.css";
             </section>
 
             <PaperStack pinColor="yellow">
-                <Skills />
-            </PaperStack>
-            <PaperStack pinColor="blue">
                 <Experiences />
             </PaperStack>
-            <PaperStack pinColor="green">
+            <PaperStack pinColor="blue">
                 <Projects />
             </PaperStack>
         </main>
@@ -77,12 +73,16 @@ import "../styles/global.css";
         display: flex;
         align-items: center;
         min-height: 0;
+        transform: translateY(0.4rem);
     }
 
     .cards-width {
         width: 100%;
     }
 
-
-
+    @media (max-height: 800px) and (max-width: 1450px) {
+        .cards-space {
+            padding-top: 30px;
+        }
+    }
 </style>

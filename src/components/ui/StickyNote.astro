@@ -10,7 +10,7 @@ const {
     color = "yellow",
     type = "",
     class: className = "",
-    width = "235px",
+    width = "",
 } = Astro.props;
 ---
 
@@ -24,23 +24,25 @@ const {
 <style>
     /* Credit: https://codepen.io/edbond88/pen/DOMYgy, modernized */
     .sticky-note {
-    	width: var(--sticky-width, 235px);
+    	max-width: var(--sticky-width, 300px);
+        min-width: 200px;
     	/*min-height: 235px;*/
-    	padding: 35px; 
+    	padding: 10px; 
         position: relative;
+
+        box-sizing: border-box;
         
     	display: inline-block;
     	vertical-align: top;
 
-        font-family: "Englebert", system-ui, sans-serif;
-    	font-size: 24px;
-        line-height: 34px;
+    	font-size: 2rem;
        	text-align: center;
-        
-    	
+
     	color:#4b453c;
     	background: var(--note-color, #F7E999);
     	box-shadow: 0 4px 5px rgb(0 0 0 / 0.2);
+
+        text-wrap: pretty;
     }
 
     /* Tape part */

@@ -1,20 +1,69 @@
 ---
 import StickyNote from "../ui/StickyNote.astro";
 ---
-<section class="flex flex-wrap justify-between">
+<section class="cards-grid">
     <StickyNote color="yellow">
-        <p>Never</p>
+        <h5>Frameworks</h5>
+        <div class="skill-pills">
+            <span>React.js</span>
+            <span>Astro.js</span>
+        </div>
     </StickyNote>
     
     <StickyNote color="blue">
-        <p>Gonna</p>
+        <h5>Languages</h5>
+        <div class="skill-pills">
+            <span>Python</span>
+            <span>TypeScript</span>
+            <span>SQL</span>
+            <span>C++</span>
+            <span>Rust (learning)</span>
+            <span>HTML</span>
+            <span>CSS</span>
+        </div>
     </StickyNote>
     
     <StickyNote color="green">
-        <p>Give</p>
+        <h5>Infrastructure</h5>
+        <div class="skill-pills">
+            <span>Docker</span>
+            <span>Linux</span>
+            <span>Proxmox</span>
+            <span>Tailscale</span>
+        </div>
     </StickyNote>
     
     <StickyNote color="pink">
-        <p>You</p>
+        <h5>Tools & AI</h5>
+        <div class="skill-pills">
+            <span>Git</span>
+        </div>
     </StickyNote>
 </section>
+
+<style>
+    .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        justify-content: space-between;
+        gap: 2rem;
+    }
+    
+    .skill-pills > span {
+        padding: 8px;
+        text-align: center;
+       	background: var(--note-color, #f1eadb);
+       	border: solid black 1px;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    @media (max-width: 1450px) {
+        .cards-grid {
+            grid-template-columns: repeat(2, auto);
+            justify-content: center;
+            gap: 2rem;
+            padding-top: 20px;
+        }
+    }
+</style>
