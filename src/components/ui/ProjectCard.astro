@@ -1,0 +1,15 @@
+---
+const {
+    banner,
+    title,
+    description,
+    github
+} = Astro.props
+---
+
+<section class="bg-card-bg p-6 shadow-[4px_4px_#0000001a]">
+    <img src={banner.src} alt={title}></img>
+    <h3>{title}</h3>
+    <p>{description}</p>
+    <a href={github}>github</a>
+</section>

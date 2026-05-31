@@ -1,7 +1,19 @@
 ---
+import ProjectCard from "../ui/ProjectCard.astro"
+import { projects } from "../../data/projects";
 ---
 
 <section>
-    <h3>Projects</h3>
-    
+    <h1>Projects</h1>
+
+    <section>
+        {projects.map((p) => (
+        <ProjectCard
+            banner={p.banner}
+            title={p.title}
+            description={p.description}
+            github={p.github}
+        />
+        ))}
+    </section>
 </section>

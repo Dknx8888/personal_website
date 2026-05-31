@@ -3,13 +3,13 @@
 @import "tailwindcss";
 
 @theme {
-  --font-logo: "Patrick Hand SC", "Comic Sans MS", cursive;
-  --font-nav: "Nunito", "Inter", system-ui, sans-serif;
-  --font-greeting: "Kalam", cursive;
-  --font-text: "Caveat", cursive;
+  --font-header: "Patrick Hand SC", cursive;
+  --font-text: "Kalam", cursive;
 
   --color-page-bg: #f3d7a4;
   --color-page-bg-dark: #1f2933;
+
+  --color-card-bg: #f1eadb;
 
   --color-header-sky: #4FA7EE;
   --color-logo-ink: #174A6A;
@@ -27,14 +27,15 @@
   }
 }
 
-.paper-stack h3 {
-  font-family: var(--font-greeting);
-  font-size: 4rem;
-  line-height: 6rem;
+h1 {
+  font-family: var(--font-header);
+  font-size: 6rem;
+  line-height: 7rem;
 }
 
-.paper-stack h5 {
+h3 {
   font-family: var(--font-text);
-  font-size: clamp(2rem, 2.8vh, 2.5rem);
+  /*font-size: clamp(2rem, 2.8vh, 2.5rem);*/
+  font-size: 2rem;
   line-height: 3rem;
 }

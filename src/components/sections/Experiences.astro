@@ -1,7 +1,21 @@
 ---
+import ExperienceCard from "../ui/ExperienceCard.astro"
+import { experiences } from "../../data/experiences";
 ---
 
 <section>
-    <h3>Experiences</h3>
-    
+    <h1>Experiences</h1>
+
+    <section class="flex flex-col gap-12 pt-8">
+        {experiences.map((e) => (
+        <ExperienceCard
+            company={e.company}
+            role={e.role}
+            date={e.date}
+            location={e.location}
+            description={e.description}
+        />
+        ))}
+    </section>
+
 </section>

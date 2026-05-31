@@ -1,0 +1,48 @@
+---
+const {
+    company,
+    role,
+    date,
+    location,
+    description
+} = Astro.props
+---
+
+<section class=" bg-card-bg p-6 shadow-[4px_4px_#0000001a]">
+    <section class="exp-head">
+        <section class="company-and-role">
+            <h3>{company}</h3>
+            <p>{role}</p>
+        </section>
+    
+        <section class="date-and-location">
+            <p>{date}</p>
+            <p>{location}</p>
+        </section>
+    </section>
+
+
+    <h5 class="description">{description}</h5>
+</section>
+
+<style>
+    .exp-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 24px;
+    }
+
+    .company-and-role,
+    .date-and-location {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      line-height: 1.1;
+    }
+
+    .date-and-location {
+        align-self: center;
+        text-align: right;
+    }
+</style>
