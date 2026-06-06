@@ -4,11 +4,15 @@ const {
     role,
     date,
     location,
-    description
+    description,
+    rotation = 0
 } = Astro.props
 ---
 
-<section class=" bg-card-bg p-6 shadow-[4px_4px_#0000001a]">
+<section 
+    class=" bg-card-bg p-6 shadow-[4px_4px_#0000001a]"
+    style={`transform: rotate(${rotation}deg);`}
+>
     <section class="exp-head">
         <section class="company-and-role">
             <h3>{company}</h3>

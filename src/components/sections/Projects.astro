@@ -4,16 +4,27 @@ import { projects } from "../../data/projects";
 ---
 
 <section>
-    <h1>Projects</h1>
+    <h1 class="flex justify-center -translate-x-6 pb-7">Projects</h1>
 
     <section>
-        {projects.map((p) => (
-        <ProjectCard
-            banner={p.banner}
-            title={p.title}
-            description={p.description}
-            github={p.github}
-        />
-        ))}
+        <section class="grid grid-cols-2 gap-6">
+            {projects.map((p) => {
+
+            // -2 to 2 deg rotation for cool deco
+            const rotation = Math.random() * 4 - 2
+
+            return (
+                <ProjectCard
+                    banner={p.banner}
+                    title={p.title}
+                    description={p.description}
+                    github={p.github}
+                    link={p.link}
+                    rotation={rotation}
+                />
+            )
+            })}
+        </section>
     </section>
+
 </section>

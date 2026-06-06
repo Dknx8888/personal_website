@@ -1,15 +1,40 @@
 ---
+import {Image} from "astro:assets"
+
 const {
     banner,
     title,
     description,
-    github
+    github,
+    link,
+    rotation = 0
 } = Astro.props
 ---
 
-<section class="bg-card-bg p-6 shadow-[4px_4px_#0000001a]">
-    <img src={banner.src} alt={title}></img>
+<section 
+    class="bg-card-bg p-6 shadow-[4px_4px_#0000001a] flex flex-col"
+    style={`transform: rotate(${rotation}deg);`}
+>
+    <Image 
+        src={banner} 
+        alt={title}
+        class="h-50 w-auto self-center pb-6"
+    />
     <h3>{title}</h3>
     <p>{description}</p>
-    <a href={github}>github</a>
+    <section class="flex flex-row-reverse mt-auto text-gray-500 pt-4 gap-4">
+        <a href={github}>
+            github 
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs"/>
+        </a>
+
+        { link &&
+            <a href={link}>
+                link
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs"/>
+            </a>
+        }
+
+    </section>
+    
 </section>

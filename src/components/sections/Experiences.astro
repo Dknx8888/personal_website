@@ -4,18 +4,24 @@ import { experiences } from "../../data/experiences";
 ---
 
 <section>
-    <h1>Experiences</h1>
+    <h1 class="flex justify-center -translate-x-6">Experiences</h1>
 
     <section class="flex flex-col gap-12 pt-8">
-        {experiences.map((e) => (
-        <ExperienceCard
-            company={e.company}
-            role={e.role}
-            date={e.date}
-            location={e.location}
-            description={e.description}
-        />
-        ))}
+        {experiences.map((e) => {
+            // -2 to 2 deg rotation for cool deco
+            const rotation = Math.random() * 4 - 2
+
+            return (
+                <ExperienceCard
+                    company={e.company}
+                    role={e.role}
+                    date={e.date}
+                    location={e.location}
+                    description={e.description}
+                    rotation={rotation}
+                />
+            )
+        })}
     </section>
 
 </section>

@@ -1,17 +1,19 @@
 import testronautImg from "../assets/project_pics/testronaut-menu.png"
-import jesterImg from "../assets/project_pics/jester-io-upload.png"
+import jesterImg from "../assets/project_pics/jester-io.png"
 
 export const projects = [
     {
         banner: testronautImg,
         title: "Testronaut",
         description: "A project for Oakland University's hackathon, Grizzhacks (we won second place! :)). A CLI tool that makes various parts of the software development lifecycle faster, including test cases generation, code performance analysis, refactoring suggestions, and CI/CD pipeline check.",
+        link: "",
         github: "https://github.com/Dknx8888/testronaut"
     },
     {
         banner: jesterImg,
         title: "Jester.io",
-        description: "",
+        description: "My first hackathon project for Michigan State University's Spartahack (we didn't win though). An attempt to make video lectures more enjoyable by converting them into short-form videos, with voiceovers from any famous character.",
+        link: "",
         github: "https://github.com/viraj-shahh/jester"
     },
 ]
