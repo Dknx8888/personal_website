@@ -18,16 +18,17 @@ const {
 <style>
 .paper-stack {
     --paper-color: #f1eadb;
-    --line-color: rgba(86, 128, 130, 0.38);
-    --margin-line-color:rgba(178, 83, 67, 0.55);
+    --line-color: #56808261;
+    --margin-line-color:#b253438c;
     --line-height: 48px;
     --margin-line-x: 56px;
 
     background-color: var(--paper-color);
 
     background-image: 
-        url(http://www.transparenttextures.com/patterns/rice-paper.png),
+        url("../../assets/textures/rice-paper.png"),
         linear-gradient(
+        /* Red line */
             to right,
             transparent 0,
             transparent calc(var(--margin-line-x) - 1px),
@@ -38,6 +39,7 @@ const {
             transparent var(--margin-line-x)
         ),
 
+        /* Blue line */
         repeating-linear-gradient(
             to bottom,
 
@@ -46,8 +48,7 @@ const {
 
             var(--line-color) calc(var(--line-height) - 1px),
             var(--line-color) var(--line-height)
-        ),
-        url(http://www.transparenttextures.com/patterns/rice-paper.png);
+        );
 
     background-size:
         100% 100%,
@@ -57,7 +58,7 @@ const {
         no-repeat,
         repeat;
 
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    box-shadow: 0 0 10px #0000004d;
     margin: 50px auto 0;
     width: min(920px, calc(100vw - 4rem));
     min-height: 300px;
@@ -75,7 +76,7 @@ const {
     width: 100%;
     z-index: -1;
     background-color: #f1eadb;
-    background-image: url(http://www.transparenttextures.com/patterns/rice-paper.png);
+    background-image: url("../../assets/textures/rice-paper.png");
 }
 
 .paper-stack::before {
@@ -90,22 +91,5 @@ const {
     right: -3px;
     top: 1px;
     transform: rotate(1.4deg);
-}
-
-.paper-pin {
-  position: absolute;
-  left: 50%;
-  top: 2px;
-  transform: translateX(-50%);
-
-  width: 22px;
-  height: 22px;
-  display: block;
-  border-radius: 50%;
-
-  background: #d74a4a;
-  box-shadow: inset -3px -3px #0000004d,0 2px 3px #0000004d;
-  z-index: 3;
-  pointer-events: none;
 }
 </style>

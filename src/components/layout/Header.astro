@@ -1,30 +1,88 @@
+---
+import Paper from "../ui/Paper.astro"
+---
+
 <header
-    class="box-border grid h-18 grid-cols-[1fr_auto_1fr] items-center 
-    bg-transparent bg-no-repeat bg-position-[bottom_right] bg-size-[auto_100%]
-    px-12.5 sticky top-0 z-50"
+    class="
+        sticky top-0 z-50
+        grid h-18 grid-cols-[1fr_auto_1fr] items-center
+        px-12.5 pt-2
+    "
 >
-    <p class="font-header text-3xl font-bold
-    text-logo-ink [text-shadow:0_1px_0_rgb(255_255_255/0.35)]"
-    >
-        NICK VU
-    </p>
+    <Paper class="justify-self-start" torn="right">
+        <a href="#top">
+            <h3 class="font-header font-bold text-logo-ink [text-shadow:0_1px_0_#ffffff59]">
+                Nick Vu
+            </h3>
+        </a>
 
-    <nav
-      class="justify-self-center flex items-center gap-4 text-center 
-      *:font-text *:text-[1.1rem] *:font-semibold *:tracking-[0.01em] *:text-nav-ink"
-    >
-        <p>phone</p>
-        <p>email</p>
-        <p>github</p>
-        <p>linkedin</p>
-        <p>experience</p>
-        <p>blog</p>
-    </nav>
+    </Paper>
 
-    <button
-      class="justify-self-end cursor-pointer border-0 bg-transparent text-2xl text-nav-ink font-text"
-      aria-label="Toggle dark mode"
-    >
-        <p>resume</p>
-    </button>
+    <Paper class="justify-self-center" torn={["right", "left"]}>
+        <nav
+        class="flex items-center gap-4 *:text-[1.2rem] *:font-semibold *:text-nav-ink"
+        >
+            <a href="tel:5174027981" class="group inline-block">
+                <span class="group-hover:hidden">
+                    phone
+                </span>
+            
+                <span class="hidden group-hover:inline">
+                    517-402-7981
+                </span>
+            </a>
+
+
+            <a href="mailto:nick.dev.8888@gmail.com" class="group inline-block">
+                <span class="group-hover:hidden">
+                    email
+                </span>
+            
+                <span class="hidden group-hover:inline">
+                    nick.dev.8888@gmail.com
+                </span>
+            </a>
+            
+            <a 
+                href="https://github.com/Dknx8888" target="_blank" rel="noreferrer"
+                class="group inline-block"
+            >
+                <span class="group-hover:hidden">
+                    github
+                </span>
+            
+                <span class="hidden group-hover:inline">
+                    Dknx8888
+                </span>
+            </a>
+            
+            <a 
+                href="https://www.linkedin.com/in/nick-duc-vu" target="_blank" rel="noreferrer"
+                class="group inline-block"
+            >
+                <span class="group-hover:hidden">
+                    linkedin
+                </span>
+            
+                <span class="hidden group-hover:inline">
+                    nick-duc-vu
+                </span>
+            </a>
+            <a href="#experience">experience</a>
+            <a href="#projects">projects</a>
+            <!-- <p>blog</p> -->
+        </nav>
+    </Paper>
+
+    <Paper class="justify-self-end" torn="left">
+        <a
+          href="/Nick_Vu_Resume.pdf"
+          target="_blank"
+          rel="noreferrer"
+          class="cursor-pointer text-nav-ink font-text"
+          aria-label="Shows resume"
+        >
+          <h3>resume</h3>
+        </a>
+    </Paper>
 </header>

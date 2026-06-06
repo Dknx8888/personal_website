@@ -1,0 +1,138 @@
+---
+type TornSide = "top" | "right" | "bottom" | "left";
+
+interface Props {
+    class?: string;
+    torn?: boolean | TornSide | TornSide[];
+}
+
+const {
+    class: className = "",
+    torn = false,
+} = Astro.props;
+
+const rawTornSides: TornSide[] =
+    torn === true
+        ? ["bottom"]
+        : torn === false
+          ? []
+          : Array.isArray(torn)
+            ? torn
+            : [torn];
+
+const tornSides = [...new Set(rawTornSides)];
+---
+
+<div class:list={["paper", className]}>
+    {tornSides.map((side) => (
+        <span class:list={["tear", `tear-${side}`]} aria-hidden="true"></span>
+    ))}
+    <slot />
+</div>
+
+<!-- Thanks Codex for the tearing effect -->
+<style>
+    .paper {
+        --paper-color: #f1eadb;
+        --line-color: #56808261;
+        --line-height: 48px;
+        --torn-size: 16px;
+        --paper-background:
+            url("../../assets/textures/rice-paper.png"),
+            repeating-linear-gradient(
+                to bottom,
+
+                transparent 0,
+                transparent calc(var(--line-height) - 1px),
+
+                var(--line-color) calc(var(--line-height) - 1px),
+                var(--line-color) var(--line-height)
+            );
+        --torn-top-clip-path: polygon(
+            0 58%, 4% 31%, 8% 70%, 12% 42%, 16% 66%, 20% 37%,
+            24% 60%, 28% 28%, 32% 65%, 36% 45%, 40% 72%, 44% 36%,
+            48% 62%, 52% 40%, 56% 76%, 60% 34%, 64% 67%, 68% 45%,
+            72% 70%, 76% 38%, 80% 63%, 84% 32%, 88% 68%, 92% 41%,
+            96% 73%, 100% 45%, 100% 100%, 0 100%
+        );
+        --torn-right-clip-path: polygon(
+            0 0, 55% 0, 30% 4%, 70% 8%, 42% 12%, 66% 16%, 35% 20%,
+            58% 24%, 27% 28%, 64% 32%, 44% 36%, 72% 40%, 36% 44%,
+            62% 48%, 40% 52%, 76% 56%, 34% 60%, 67% 64%, 45% 68%,
+            70% 72%, 38% 76%, 63% 80%, 32% 84%, 68% 88%, 41% 92%,
+            73% 96%, 45% 100%, 0 100%
+        );
+        --torn-bottom-clip-path: polygon(
+            0 0, 100% 0, 100% 45%, 96% 72%, 92% 38%, 88% 64%,
+            84% 42%, 80% 78%, 76% 50%, 72% 70%, 68% 44%, 64% 62%,
+            60% 36%, 56% 76%, 52% 48%, 48% 68%, 44% 40%, 40% 74%,
+            36% 52%, 32% 80%, 28% 46%, 24% 66%, 20% 42%, 16% 72%,
+            12% 50%, 8% 78%, 4% 44%, 0 65%
+        );
+        --torn-left-clip-path: polygon(
+            45% 0, 100% 0, 100% 100%, 45% 100%, 72% 96%, 38% 92%,
+            64% 88%, 32% 84%, 68% 80%, 40% 76%, 70% 72%, 45% 68%,
+            67% 64%, 34% 60%, 76% 56%, 40% 52%, 62% 48%, 36% 44%,
+            72% 40%, 44% 36%, 64% 32%, 27% 28%, 58% 24%, 35% 20%,
+            66% 16%, 42% 12%, 70% 8%, 30% 4%, 55% 0
+        );
+
+        background-color: var(--paper-color);
+        background-image: var(--paper-background);
+
+        box-shadow: 0 0 10px #0000004d;
+        padding: 16px 16px;
+        display: inline-block;
+        position: relative;
+        overflow: visible;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .tear {
+        position: absolute;
+        background-color: var(--paper-color);
+        background-image: var(--paper-background);
+        display: block;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .paper > :global(:not(.tear)) {
+        position: relative;
+        z-index: 1;
+    }
+
+    .tear-top {
+        left: 0;
+        bottom: calc(100% - 1px);
+        width: 100%;
+        height: var(--torn-size);
+        clip-path: var(--torn-top-clip-path);
+    }
+
+    .tear-right {
+        left: calc(100% - 1px);
+        top: 0;
+        width: var(--torn-size);
+        height: 100%;
+        clip-path: var(--torn-right-clip-path);
+    }
+
+    .tear-bottom {
+        left: 0;
+        top: calc(100% - 1px);
+        width: 100%;
+        height: var(--torn-size);
+        clip-path: var(--torn-bottom-clip-path);
+    }
+
+    .tear-left {
+        right: calc(100% - 1px);
+        top: 0;
+        width: var(--torn-size);
+        height: 100%;
+        clip-path: var(--torn-left-clip-path);
+    }
+</style>

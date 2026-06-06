@@ -29,7 +29,7 @@ import "../styles/global.css";
         <meta name="generator" content={Astro.generator} />
         <title>Astro</title>
     </head>
-    <body>
+    <body id="top">
         <Header />
         <main class="max-w-360 mx-auto flex flex-col">
             <section class="hero">
@@ -56,10 +56,10 @@ import "../styles/global.css";
 </html>
 
 <style>
+    /* Taken from https://www.transparenttextures.com/ */
     body {
         background-color: #8c6746;
-        background-image: url("https://www.transparenttextures.com/patterns/felt.png");
-        /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */ 
+        background-image: url("../assets/textures/felt.png");
     }
 
     .hero {
