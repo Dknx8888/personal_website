@@ -25,13 +25,13 @@ import "../styles/global.css";
             href="https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap"
             rel="stylesheet"
         />
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="generator" content={Astro.generator} />
         <title>Nick Vu</title>
     </head>
     <body id="top">
         <Header />
-        <main class="max-w-360 mx-auto flex flex-col">
+        <main class="mx-auto flex w-full max-w-360 flex-col overflow-x-clip">
             <section class="hero">
                 <PaperStack pinColor="red">
                     <Greetings />

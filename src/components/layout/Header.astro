@@ -5,8 +5,9 @@ import Paper from "../ui/Paper.astro"
 <header
     class="
         sticky top-0 z-50
-        grid h-18 grid-cols-[1fr_auto_1fr] items-center
-        px-12.5 pt-2
+        grid h-18 grid-cols-[1fr_auto_1fr] items-stretch
+        px-4 md:px-12.5
+        md:grid-cols-[1fr_auto_1fr]
     "
 >
     <Paper class="justify-self-start" torn="right">
@@ -15,66 +16,23 @@ import Paper from "../ui/Paper.astro"
                 Nick Vu
             </h3>
         </a>
-
     </Paper>
 
-    <Paper class="justify-self-center" torn={["right", "left"]}>
-        <nav
-        class="flex items-center gap-4 *:text-[1.2rem] *:font-semibold *:text-nav-ink"
-        >
-            <a href="tel:5174027981" class="group inline-block">
-                <span class="group-hover:hidden">
-                    phone
-                </span>
-            
-                <span class="hidden group-hover:inline">
-                    517-402-7981
-                </span>
-            </a>
-
-
-            <a href="mailto:nick.dev.8888@gmail.com" class="group inline-block">
-                <span class="group-hover:hidden">
-                    email
-                </span>
-            
-                <span class="hidden group-hover:inline">
-                    nick.dev.8888@gmail.com
-                </span>
-            </a>
-            
-            <a 
-                href="https://github.com/Dknx8888" target="_blank" rel="noreferrer"
-                class="group inline-block"
+    <div class="hidden justify-self-center min-[820px]:block">
+        <Paper torn={["right", "left"]}>
+            <nav
+            class="flex items-center gap-4 *:text-[1.2rem] *:font-semibold *:text-nav-ink"
             >
-                <span class="group-hover:hidden">
-                    github
-                </span>
-            
-                <span class="hidden group-hover:inline">
-                    Dknx8888
-                </span>
-            </a>
-            
-            <a 
-                href="https://www.linkedin.com/in/nick-duc-vu" target="_blank" rel="noreferrer"
-                class="group inline-block"
-            >
-                <span class="group-hover:hidden">
-                    linkedin
-                </span>
-            
-                <span class="hidden group-hover:inline">
-                    nick-duc-vu
-                </span>
-            </a>
-            <a href="#experience">experience</a>
-            <a href="#projects">projects</a>
-            <!-- <p>blog</p> -->
-        </nav>
-    </Paper>
+                <a href="#experience">experience</a>
+                <a href="#projects">projects</a>
+                <a href="#contacts">contact</a>
+                <p>blog(coming soon)</p>
+            </nav>
+        </Paper>
+    </div>
 
-    <Paper class="justify-self-end" torn="left">
+
+    <Paper class="hidden justify-self-end md:flex" torn="left">
         <a
           href="/Nick_Vu_Resume.pdf"
           target="_blank"
@@ -85,4 +43,5 @@ import Paper from "../ui/Paper.astro"
           <h3>resume</h3>
         </a>
     </Paper>
+
 </header>

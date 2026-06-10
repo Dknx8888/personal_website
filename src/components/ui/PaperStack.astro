@@ -60,7 +60,7 @@ const {
 
     box-shadow: 0 0 10px #0000004d;
     margin: 50px auto 0;
-    width: min(920px, calc(100vw - 4rem));
+    width: min(920px, calc(100% - 4rem));
     min-height: 300px;
     line-height: var(--line-height);
 
@@ -68,6 +68,38 @@ const {
     position: relative;
     overflow: visible;
 }
+
+@media (max-width: 767px) {
+    .paper-stack {
+        --line-height: 32px;
+        --margin-line-x: 0px;
+
+        background-image:
+            url("../../assets/textures/rice-paper.png"),
+            repeating-linear-gradient(
+                to bottom,
+
+                transparent 0,
+                transparent calc(var(--line-height) - 1px),
+
+                var(--line-color) calc(var(--line-height) - 1px),
+                var(--line-color) var(--line-height)
+            );
+
+        background-size:
+            100% 100%,
+            100% var(--line-height);
+
+        background-repeat:
+            no-repeat,
+            repeat;
+
+        box-sizing: border-box ;
+        padding-left: 24px;
+        width: calc(100% - 0.5rem);
+    }
+}
+
 
 .paper-stack::before, .paper-stack::after {
     content: "";

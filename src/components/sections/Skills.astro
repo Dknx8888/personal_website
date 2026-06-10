@@ -7,6 +7,7 @@ import StickyNote from "../ui/StickyNote.astro";
         <div class="skill-pills">
             <span>React.js</span>
             <span>Astro.js</span>
+            <span>.NET (learning)</span>
         </div>
     </StickyNote>
     
@@ -16,8 +17,7 @@ import StickyNote from "../ui/StickyNote.astro";
             <span>Python</span>
             <span>TypeScript</span>
             <span>SQL</span>
-            <span>C++</span>
-            <span>Rust (learning)</span>
+            <span>C# (learning)</span>
             <span>HTML</span>
             <span>CSS</span>
         </div>
@@ -65,12 +65,31 @@ import StickyNote from "../ui/StickyNote.astro";
         font-size: 1.2rem;
         font-weight: bold;
     }
-    
+
+    @media (max-width: 767px) {
+        .skill-pills > span {
+            font-size: 0.8rem;
+        }
+    }
+
     @media (max-width: 1450px) {
         .cards-grid {
             grid-template-columns: repeat(2, auto);
             justify-content: center;
+            justify-items: center;
+            align-items: center;
             gap: 2rem;
+            padding-top: 20px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .cards-grid {
+            grid-template-columns: repeat(1, auto);
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+            gap: 4rem;
             padding-top: 20px;
         }
     }
