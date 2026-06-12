@@ -44,3 +44,87 @@
         nick-duc-vu
     </span>
 </a> -->
+
+---
+import StickyNote from "../ui/StickyNote.astro"
+---
+
+<section class="pt-10 flex justify-center items-center">
+    <StickyNote width="auto" color="blue">
+        <div class="contact-pills">
+            <a href="tel:5174027981" class="pill group">
+                <span class="group-hover:hidden">phone</span>
+                <span class="hidden group-hover:inline">517-402-7981</span>
+            </a>
+    
+            <a href="mailto:nick.dev.8888@gmail.com" class="pill group">
+                <span class="group-hover:hidden">email</span>
+                <span class="hidden group-hover:inline">nick.dev.8888@gmail.com</span>
+            </a>
+    
+            <a href="https://github.com/Dknx8888" target="_blank" rel="noreferrer" class="pill group">
+                <span class="group-hover:hidden">github</span>
+                <span class="hidden group-hover:inline">Dknx8888</span>
+            </a>
+    
+            <a href="https://www.linkedin.com/in/nick-duc-vu" target="_blank" rel="noreferrer" class="pill group">
+                <span class="group-hover:hidden">linkedin</span>
+                <span class="hidden group-hover:inline">nick-duc-vu</span>
+            </a>
+        </div>
+    </StickyNote>
+
+</section>
+
+<style>
+    .contact-pills {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 16px;
+    }
+    
+    .pill {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    
+        padding: 8px 14px;
+        min-width: 88px;
+    
+        color: #4b453c;
+        text-decoration: none;
+        text-align: center;
+    
+        background: #f1eadb;
+        border: solid black 1px;
+        box-shadow: 3px 3px 0 rgb(0 0 0 / 0.25);
+    
+        font-size: 1rem;
+        font-weight: bold;
+    
+        transition:
+            transform 120ms ease,
+            box-shadow 120ms ease,
+            background-color 120ms ease;
+    }
+    
+    @media (hover: hover) {
+        .pill:hover {
+            background: #fff6df;
+            transform: translate(-1px, -1px);
+            box-shadow: 5px 5px 0 rgb(0 0 0 / 0.25);
+        }
+    }
+    
+    .pill:active {
+        transform: translate(2px, 2px);
+        box-shadow: 1px 1px 0 rgb(0 0 0 / 0.25);
+    }
+    
+    .pill:focus-visible {
+        outline: 3px solid #174a6a;
+        outline-offset: 3px;
+    }
+
+</style>

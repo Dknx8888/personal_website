@@ -1,0 +1,28 @@
+---
+import Paper from "../ui/Paper.astro";
+---
+
+<details class="group relative h-full">
+    <summary
+        class="flex cursor-pointer list-none h-full items-center text-nav-ink shadow-md [&::-webkit-details-marker]:hidden"
+        aria-label="Open navigation menu"
+    >
+        <Paper torn="left"><span class="text-3xl leading-none">☰</span></Paper>
+    </summary>
+
+    <Paper
+        class="absolute! right-0 top-full mt-2 h-auto!
+            min-w-48 flex-col items-stretch"
+        torn="top"
+    >
+        <nav class="flex flex-col gap-5 text-xl font-semibold text-nav-ink pt-3">
+            <a href="#experience">experience</a>
+            <a href="#projects">projects</a>
+            <a href="#contacts">contact</a>
+            <a href="/Nick_Vu_Resume.pdf" target="_blank" rel="noreferrer"
+                >resume</a
+            >
+            <p>blog(soon)</p>
+        </nav>
+    </Paper>
+</details>

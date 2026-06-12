@@ -1,24 +1,25 @@
 ---
 import Paper from "../ui/Paper.astro"
+import NavMobile from "../sections/NavMobile.astro"
 ---
 
 <header
     class="
         sticky top-0 z-50
-        grid h-18 grid-cols-[1fr_auto_1fr] items-stretch
-        px-4 md:px-12.5
-        md:grid-cols-[1fr_auto_1fr]
+        grid h-18 grid-cols-[auto_1fr] items-stretch
+
+        min-[832px]:grid-cols-[1fr_auto_1fr]
     "
 >
     <Paper class="justify-self-start" torn="right">
         <a href="#top">
-            <h3 class="font-header font-bold text-logo-ink [text-shadow:0_1px_0_#ffffff59]">
+            <h3 class="font-semibold text-logo-ink [text-shadow:0_1px_0_#ffffff59] text-[1.5rem]!">
                 Nick Vu
             </h3>
         </a>
     </Paper>
 
-    <div class="hidden justify-self-center min-[820px]:block">
+    <div class="hidden justify-self-center min-[832px]:block">
         <Paper torn={["right", "left"]}>
             <nav
             class="flex items-center gap-4 *:text-[1.2rem] *:font-semibold *:text-nav-ink"
@@ -31,17 +32,24 @@ import Paper from "../ui/Paper.astro"
         </Paper>
     </div>
 
+    <div class="hidden justify-self-end min-[832px]:block">
+        <Paper torn="left">
+            <a
+              href="/Nick_Vu_Resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              class="cursor-pointer text-nav-ink font-text"
+              aria-label="Shows resume"
+            >
+              <h3>resume</h3>
+            </a>
+        </Paper>
+    </div>
 
-    <Paper class="hidden justify-self-end md:flex" torn="left">
-        <a
-          href="/Nick_Vu_Resume.pdf"
-          target="_blank"
-          rel="noreferrer"
-          class="cursor-pointer text-nav-ink font-text"
-          aria-label="Shows resume"
-        >
-          <h3>resume</h3>
-        </a>
-    </Paper>
+
+    <div class="justify-self-end min-[832px]:hidden">
+        <NavMobile />
+    </div>
+
 
 </header>

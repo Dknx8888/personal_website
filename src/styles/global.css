@@ -31,8 +31,6 @@
 
 h1 {
     font-family: var(--font-header);
-    /*font-size: clamp(3.25rem, 5vw, 6rem);
-    line-height: clamp(1.05rem, 5vw, 7rem);*/
     font-size: 4rem;
     line-height: 4.9rem;
 }
@@ -45,9 +43,7 @@ h1 {
 }
 
 h3 {
-    /*font-size: clamp(1.35rem, 5vw, 2rem);*/
     font-size: 1.2rem;
-    /*line-height: clamp(1.35rem, 5vw, 3rem);*/
     line-height: 2rem;
 }
 
