@@ -24,7 +24,7 @@ const {
 <style>
     /* Credit: https://codepen.io/edbond88/pen/DOMYgy, modernized */
     .sticky-note {
-    	max-width: var(--sticky-width, 300px);
+    	max-width: min(var(--sticky-width, 300px), calc(100vw - 3rem));
         height: fit-content;
         width: fit-content;
         /*min-width: 200px;*/
