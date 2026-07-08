@@ -1,6 +1,7 @@
 ---
 import Paper from "../ui/Paper.astro"
 import NavMobile from "../sections/NavMobile.astro"
+import resumeUrl from "../../assets/Nick_Vu_Resume.pdf"
 ---
 
 <header
@@ -35,7 +36,7 @@ import NavMobile from "../sections/NavMobile.astro"
     <div class="hidden justify-self-end min-[832px]:block">
         <Paper torn="left">
             <a
-              href="/Nick_Vu_Resume.pdf"
+              href={resumeUrl}
               target="_blank"
               rel="noreferrer"
               class="cursor-pointer text-nav-ink font-text"
